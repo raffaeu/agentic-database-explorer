@@ -1,0 +1,25 @@
+# Node
+node_modules/
+*.log
+
+# Build outputs
+/dist/
+/.vite/
+/apps/react/dist/
+
+# Dotnet
+bin/
+obj/
+*.user
+*.rsuser
+
+# Env & secrets
+.env
+.env.*
+/secrets/
+
+# MacOS
+.DS_Store
+
+# VS Code
+.vscode/*.log

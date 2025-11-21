@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  api:
+    build: ../..
+    image: agentic-db-explorer-api:dev
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - sql
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: local-azure-sql
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
+      - SA_PASSWORD=Your_password123
+    healthcheck:
+      test: ["CMD", "bash", "-c", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SA_PASSWORD -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
