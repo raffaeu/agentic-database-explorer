@@ -2,6 +2,8 @@
 
 A demonstration project showing how to build an agentic AI on top of Azure SQL to analyze database schemas, inspect and query content, and incrementally learn and improve T-SQL. The goal is to illustrate an end-to-end pattern for combining an interactive desktop UI with a model-driven backend and containerized hosting on Azure.
 
+![Project architecture diagram](docs/schema.png)
+
 ## Why this project exists
 
 - Showcase agentic workflows that reason about database structure and generate safe, explainable T-SQL.
